@@ -1,0 +1,246 @@
+subjects:
+  default:
+    x: [-200, 100]
+    "y": [-180, 120]  # "y" must be quoted: bare y would be parsed as boolean TRUE in YAML 1.1
+    keywords: [Outbreak, Patient, Vaccine, Antiviral, Antibody, Cytokine, Severe, Bats]
+
+  "Adenovirus":
+    x: [-260,350]
+    "y": [-220,300]
+    keywords: [Therapeutic,       Cancer,             Evolv,      Infection,       Genom,    Oncogenesis,  Epidemiology,         Vaccine]
+
+  "Alpha":
+    x: [-50,180]
+    "y": [-60,230]
+    keywords: [encephalitis,  Chikungunya,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Antibody":
+    x: [-430,430]
+    "y": [-470,380]
+    keywords: [Therap,       Immune,        Autoimmune,         Cancer,       Virus,       Bacteria,      Adhesion,         Amyloid]
+
+  "Antimicrobial":
+    x: [-420,430]
+    "y": [-390,440]
+    keywords: [Patient,        Virus,              SARS,            HIV,    Bacteria,        Vaccine,      Cytokine,        Antibody]
+
+  "Arena":
+    x: [-150,50]
+    "y": [-50,120]
+    keywords: [Outbreak,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Bordetella":
+    x: [-200,120]
+    "y": [-260,130]
+    keywords: [Patient,        Toxin, "Adenylate Cyclase", Bronchiseptica,   pertussis,       Antibody,      Cytokine,         Vaccine]
+
+  "Burkholderia":
+    x: [-200,160]
+    "y": [-130,230]
+    keywords: [cepacia,      Patient,            mallei,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Campylobacter":
+    x: [-240,100]
+    "y": [-220,220]
+    keywords: [Outbreak,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "CCHF":
+    x: [30,160]
+    "y": [-30,-10]
+    keywords: [Outbreak,      Patient,              CCHF,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Cholera":
+    x: [-180,320]
+    "y": [-230,300]
+    keywords: [Vibrio,      Cholera,           Patient,     Antibiotic,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Cytokine":
+    x: [-310,420]
+    "y": [-350,280]
+    keywords: [Cancer,    Infection,        Autoimmune,           SARS,  Depression,         Sepsis,      Diabetes,         Vaccine]
+
+  "Dengue":
+    x: [-250,180]
+    "y": [-150,220]
+    keywords: [Outbreak,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "DNAv":
+    x: [-180,190]
+    "y": [-160,130]
+    keywords: [Bacteria,   Plasmodium,               HPV,         Cancer,        SARS,   tuberculosis,        Dengue, Electroporation]
+
+  "Ebola":
+    x: [-210,90]
+    "y": [-160,140]
+    keywords: [Outbreak,      Patient,         Antiviral,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "flavivirus":
+    x: [-200,200]
+    "y": [-160,200]
+    keywords: [Outbreak,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Francisella":
+    x: [-100,190]
+    "y": [-40,100]
+    keywords: [Outbreak,      Patient,        Antibiotic,        Ecology,   tularemia,       Antibody,      Cytokine,         Vaccine]
+
+  "Haemophilus":
+    x: [-200,160]
+    "y": [-220,220]
+    keywords: [influenzae,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Hanta":
+    x: [-140,200]
+    "y": [-80,70]
+    keywords: [Outbreak,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "HBV":
+    x: [-220,180]
+    "y": [-140,290]
+    keywords: [HCV,          HBV,           Patient,      Antiviral,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "HCV":
+    x: [-300,150]
+    "y": [-340,150]
+    keywords: [Genotype,      Patient,           Diagnos,         Spread,   Antiviral,       Antibody,      Cytokine,         Vaccine]
+
+  "HIV":
+    x: [7,11 ; k5=159]
+    "y": [=155, 431]
+    keywords: [CD4, Epidemiology,    Antiretroviral,      Inhibitor,       Genom,        Epidemi,      Cytokine,         Vaccine]
+
+  "Influenza":
+    x: [-300,360]
+    "y": [-370,230]
+    keywords: [Outbreak,     Patient,             Avian,       Cytokine,   Pneumonia,          Genom,       Vaccine,    Surveillance]
+
+  "Leishmania":
+    x: [-150,110]
+    "y": [-250,100]
+    keywords: [Outbreak,    Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Lyme":
+    x: [-250,0]
+    "y": [-200,70]
+    keywords: [Outbreak,    Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Measles":
+    x: [-270,50]
+    "y": [-120,220]
+    keywords: [Outbreak,    Patient,        Diagnostic,         Immune,   Treatment,        Patient,        Genome,         Vaccine]
+
+  "mRNA":
+    x: [-130,120]
+    "y": [-150,140]
+    keywords: [Vaccine,   mRNA,           Patient,          Virus,    Bacteria,       Adjuvant,       Protect,     manufacture]
+
+  "MVA":
+    x: [-150,190]
+    "y": [-160,100]
+    keywords: [Outbreak,    Bacteria,          Vaccinia,            Pox,      Cancer,           SARS,      Cytokine,           Ebola]
+
+  "Nano":
+    x: [-180,240]
+    "y": [-160,330]
+    keywords: [Therapy,   Patient,          Antibody,            OMV,      needle,           mRNA,       Epitope,         Mucosal]
+
+  "Neisseria":
+    x: [-200,140]
+    "y": [-220,250]
+    keywords: [meningitidis,   gonorrhoea,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Nipah":
+    x: [20,150]
+    "y": [-60,130]
+    keywords: [Outbreak,  Patient,        Diagnostic,         Hendra,       Nipah,       Antibody,      Cytokine,         Vaccine]
+
+  "Organoid":
+    x: [-210,180]
+    "y": [-310,100]
+    keywords: [Organoid,   Chip,            Cancer,         Immune,    Vascular,           Lung,        Neural,         Vaccine]
+
+  "Patient":
+    x: [-480,400]
+    "y": [-400,510]
+    keywords: [Immune,           Antibiotic,             COVID,            HIV,     Vaccine,         Sepsis,     Pneumonia,          Cancer]
+
+  "Plasmodium":
+    x: [-280,320]
+    "y": [-270,300]
+    keywords: [Elimination,      Patient,        Diagnostic,       Mosquito, artemisinin,      Lifecycle,      Cytokine,         Vaccine]
+
+  "Polio":
+    x: [-190,200]
+    "y": [-200,160]
+    keywords: [Outbreak,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Pseudomonas":
+    x: [-350,350]
+    "y": [-260,330]
+    keywords: [aeruginosa,      Patient,        Microbiome,       fibrosis,  Antibiotic,       Antibody,         toxin,         Vaccine]
+
+  "Primate":
+    x: [-350,300]
+    "y": [-400,200]
+    keywords: [Neuro,    Infection,               HIV,        Vaccine, Development,        Habitat,     Evolution,           Ebola]
+
+  "Rotavirus":
+    x: [-60,220]
+    "y": [-220,130]
+    keywords: [Outbreak,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,           IBD,         Vaccine]
+
+  "RSV":
+    x: [-150,320]
+    "y": [-320,250]
+    keywords: [Outbreak,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Salmonella":
+    x: [-200,260]
+    "y": [-380,180]
+    keywords: [Diagnos,    virulence,           Poultry,        typhoid,  antibiotic,   Surveillance,    bacteremia,         Vaccine]
+
+  "SARS":
+    x: [-240,310]
+    "y": [-300,280]
+    keywords: [Outbreak,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Schisto":
+    x: [-150,150]
+    "y": [-230,120]
+    keywords: [Outbreak,      Patient,        Diagnostic,         Immune,       Genom,       Antibody,      Cytokine,         Vaccine]
+
+  "Streptococcus":
+    x: [-180,330]
+    "y": [-330,220]
+    keywords: [Patient,     pyogenes,            Dental,         CRISPR,  Antibiotic,         Cancer,      Cytokine,         Vaccine]
+
+  "Subunit":
+    x: [-320,140]
+    "y": [-220,260]
+    keywords: [Bacteria,    effective,           epitope,      Evolution,    Antibody, Glycoconjugate,         Viral,      Salmonella]
+
+  "Tcell":
+    x: [-280,420]
+    "y": [-350,300]
+    keywords: [Antibody,     Cytokine,            Cancer,        Vaccine,       Virus,       Bacteria,    Autoimmune,            SARS]
+
+  "tuberculosis":
+    x: [-300,360]
+    "y": [-370,280]
+    keywords: [Outbreak,      Patient,               HIV,     Antibiotic,  Diagnostic,       Antibody,     Evolution,         Vaccine]
+
+  "Vaccine":
+    x: [-420,420]
+    "y": [-450,450]
+    keywords: [Cancer,        Virus,              SARS,            HIV,   Influenza,       Bacteria, Streptococcus,      Salmonella]
+
+  "VSV":
+    x: [-80,190]
+    "y": [-160,130]
+    keywords: [Vaccine,    Replicase,             Golgi,     pseudotype,      Cancer,       Antibody,          SARS,           Ebola]
+
+  "Yersinia":
+    x: [-130,160]
+    "y": [-160,160]
+    keywords: [Outbreak,      Patient,           Biofilm, enterocolitica,      pestis,       Antibody,      Cytokine,         Vaccine]
+

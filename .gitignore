@@ -1,0 +1,10 @@
+.Renviron
+.DS_Store
+.RData
+.Rapp.history
+.Rhistory
+.git
+*.*~
+~$*
+.Rproj.user
+rapter_app_dev.Rproj

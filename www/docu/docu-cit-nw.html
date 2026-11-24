@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Citation Network Tool Documentation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f7f9fc;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #0000cc, #000016);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid #d9e2ec;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      margin-right: 18px;
+      text-decoration: none;
+      color: #1f4e79;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px 40px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      color: #1f4e79;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #2f6fa5;
+      margin-bottom: 8px;
+    }
+
+    .home-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .image-box {
+      background: #f3f6fa;
+      border: 1px dashed #b7c7d8;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .image-box img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+
+    .image-caption {
+      font-size: 0.9rem;
+      color: #5b6b7c;
+      margin-top: 6px;
+    }
+    
+    /* SIDE-BY-SIDE */
+    .button-layout-horizontal {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* VERTICAL */
+    .button-layout-vertical {
+      display: block;
+    }
+
+
+    .button-section {
+      border-top: 1px solid #e4ebf2;
+      padding-top: 24px;
+      margin-top: 24px;
+    }
+
+    
+    .button-details p {
+      margin: 8px 0;
+    }
+
+
+    .button-doc {
+      border-left: 5px solid #2f6fa5;
+      padding-left: 16px;
+      margin-bottom: 24px;
+    }
+
+    .button-doc p {
+      margin: 6px 0;
+    }
+    
+    .workflow-section {
+      margin: 40px 0;
+      padding: 32px 24px;
+      background: linear-gradient(180deg, #f8fbff 0%, #f3f7fb 100%);
+      border: 1px solid #e2eaf3;
+      border-radius: 24px;
+    }
+
+    .workflow-header {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 28px auto;
+    }
+
+    .workflow-kicker {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 12px;
+      background: #e8f1fb;
+      color: #2a5c8a;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .workflow-header h2 {
+      margin: 0 0 10px 0;
+      font-size: 30px;
+      color: #1f3e5a;
+    }
+
+    .workflow-header p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #5c7288;
+    }
+
+    .workflow-container {
+      width: 100%;
+      overflow-x: auto;
+      padding: 8px 2px 12px 2px;
+    }
+
+    .workflow {
+      display: flex;
+      align-items: stretch;
+      gap: 18px;
+      min-width: max-content;
+      padding: 8px 4px;
+    }
+
+    .step-card {
+      position: relative;
+      flex: 0 0 auto;
+      width: 240px;
+      min-height: 250px;
+      padding: 24px 18px 18px 18px;
+      background: #ffffff;
+      border: 1px solid #dce7f2;
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(31, 62, 90, 0.08);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(31, 62, 90, 0.12);
+    }
+
+    .step-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #2f6fa5;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-icon {
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+      margin: 18px auto 16px auto;
+      display: block;
+      padding: 10px;
+      background: #f5f9fd;
+      border-radius: 18px;
+    }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #234b70;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    
+    .step-text {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #5d7388;
+      max-width: 190px;
+      margin: 0 auto;
+    }
+    
+    .workflow-link {
+      flex: 0 0 auto;
+      min-width: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .link-tag {
+      background: #eaf3fb;
+      color: #2f6fa5;
+      border: 1px solid #cfe0f0;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    
+    .arrow {
+      font-size: 30px;
+      color: #8aa1b8;
+      line-height: 1;
+    }
+    
+    .workflow-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    .workflow-container::-webkit-scrollbar-thumb {
+      background: #c8d8e8;
+      border-radius: 999px;
+    }
+    
+    .workflow-container::-webkit-scrollbar-track {
+      background: #edf3f8;
+      border-radius: 999px;
+    }
+
+  @media (max-width: 768px) {
+    .workflow-section {
+      padding: 24px 16px;
+    }
+  
+    .workflow-header h2 {
+      font-size: 24px;
+    }
+  
+    .workflow-header p {
+      font-size: 15px;
+    }
+  
+    .step-card {
+      width: 220px;
+      min-height: 235px;
+    }
+  }
+    .label {
+      font-weight: bold;
+      color: #1f4e79;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    code {
+      background: #eef3f8;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+
+    footer {
+      background: linear-gradient(to right, #e0e0e0, #f5f5f5);
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.08);
+    }
+
+    footer a {
+      color: #1f4e79;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .note {
+      background: #fff8e6;
+      border-left: 4px solid #f0b429;
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .workflow {
+        flex-direction: column;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+
+      nav {
+        position: static;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Citation Network Tool Documentation</h1>
+    <p>User guide to utilize the citation network tool to find the gaps and recent research development. The tool focuses on the vaccine development literature.</p>
+  </header>
+  
+  <!-- Navigation -->
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#homepage">Home</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#publication">Publication</a>
+  </nav>
+
+  <div class="container">
+    <!-- Overview -->
+    <section id="overview" class="card">
+      <h2>Overview</h2>
+      <p>
+        The citation networks tool helps user find the state of the art. It allows user to visualize scientific publications that have cited one another which can be helpful to understand a body of research, 
+        track a field of study over time, and identify key topics within a broader research area. 
+        For this tool, we are focusing on pathogens (Virus: Ebola, Alphavirus,Pox, Hanta, CCHFV, Measles, Nipah, Arenavirus, SARS-Cov-2 ; Bacteria: Burkholderia, Francisella, Straptococcus, 
+        Yersinia, Bordetella, Salmonella and reference pathogens),medical countermeasures (Vaccine, Antimicrobial), host model systems (Patient, NHP, Mouse, Organoid),
+        and correlates of protection (Antibody, T-cell, Cytokine). The keyword search(eg:“Ebola”, case insensitive) is carried out on article title, abstract and titles of references. 
+        The dataset is structured as a collection of nodes and edges, where each row represents a citation relationship between two articles(citing pmid and cited pmid). 
+        The network is generated using an igraph algorithm and the auto clustering per network is done by Louvain clustering algorithm. The clustering is projected using different
+        resolutions(1,2,5,10,20) . The label, justification and keywords per cluster are generated by using LLM. The results are visualized and integrated in the citation network tool.
+      </p>
+
+      <h3>Purpose</h3>
+      <p>
+        Use this application to visualize the gaps and recent development in vaccine research. 
+      </p>
+    </section>
+    
+    
+    <!-- Home -->
+    <section id="homepage" class="card">
+      <h2>Citation Network based Literature Mining</h2>
+      <div class="home-layout-vertical">
+        <div>
+          <h3>Vaccine Development Literature</h3>
+          <ul>
+            <li> List of key subject areas required for the researchers to develop a vaccine for pathogen X. The clickable tile will lead to network of subject [Browse Network button].</li>
+            <li>Two different buttons: PMID Cluster Search and Browse Network</li>
+          </ul>
+        </div>
+        
+        <div class="image-grid">
+          <div class="image-box">
+            <img src="images/homepage.png" alt="Home page screenshot" />
+            <div class="image-caption">Figure 1. Landing page of the citation network tool.</div>
+          </div>
+        </div>
+        
+        <div class="note">
+          <i>
+            Correlates of protection (red). Host model systems (blue-row1). Vaccine platforms (blue, orange and pink).
+          Medical countermeasures (black). Project pathogens (Virus: green, Bacteria: purple). Reference pathogens(Virus: maroon, Bacteria: olive, Parasite: teal)
+          </i>
+          
+        </div>
+      </div>
+    </section>
+    
+    
+    <!-- Workflow -->
+    <section id="workflow" class="card">
+      <h2>Data Workflow</h2>
+      <p>The tool follows a workflow that transforms raw source data into a fully integrated and informative web application.:</p>
+      
+      <section class="workflow-section">
+        <div class="workflow-header">
+          <span class="workflow-kicker">Pipeline Overview</span>
+          <h2>PubMed XML to Citation Network Workflow</h2>
+          <p>
+            From keyword-based PubMed retrieval to cleaned, citation-network-ready data visualized in R Shiny.
+          </p>
+        </div>
+        
+        <div class="workflow-container">
+          <div class="workflow">
+            <div class="step-card">
+              <div class="step-badge">1</div>
+              <img src="images/pubmed.png" class="step-icon" alt="PubMed search">
+              <div class="step-title">PubMed Database</div>
+              <div class="step-text">Downloaded all the literature from PubMed database</div>
+            </div>
+
+            <div class="workflow-link">
+              <span class="link-tag">Download</span>
+              <span class="arrow">→</span>
+            </div>
+
+            <div class="step-card">
+              <div class="step-badge">2</div>
+              <img src="images/xml.png" class="step-icon" alt="XML retrieval">
+              <div class="step-title">Keyword search</div>
+              <div class="step-text">Relevant PubMed records fetched in XML format. Keyword search performed using network of interest. Eg: ebola, cytokine, mouse and many more</div>
+            </div>
+
+            <div class="workflow-link">
+              <span class="link-tag">Fetch XML &amp; filter</span>
+              <span class="arrow">→</span>
+            </div>
+
+            <div class="step-card">
+              <div class="step-badge">3</div>
+              <img src="images/doc-preprocess.png" class="step-icon" alt="Preprocessing">
+              <div class="step-title">Data Preprocessing</div>
+              <div class="step-text">XML parsed into clean, structured data tables.</div>
+            </div>
+
+            <div class="workflow-link">
+              <span class="link-tag">Clean</span>
+              <span class="arrow">→</span>
+            </div>
+
+            <div class="step-card">
+              <div class="step-badge">4</div>
+              <img src="images/doc-nw.png" class="step-icon" alt="Citation network">
+              <div class="step-title">Citation Network Prep</div>
+              <div class="step-text">Citation relationships extracted for network analysis.</div>
+            </div>
+
+            <div class="workflow-link">
+              <span class="link-tag">Build</span>
+              <span class="arrow">→</span>
+            </div>
+
+            <div class="step-card">
+              <div class="step-badge">5</div>
+              <img src="images/doc-rshiny.png" class="step-icon" alt="Rshiny">
+              <div class="step-title">R Shiny Visualization</div>
+              <div class="step-text">Final results explored interactively in the app.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="note"></div>
+    </section>
+
+    <section id="buttons" class="card">
+      <h2>Buttons and Controls</h2>
+      <div class="button-section">
+        <div class="button-layout">
+          <div class="button-details">
+            <h3>PMID Cluster Search</h3>
+            <p><span class="label">Purpose:</span> Input a PMID(PubMedID) to find the research cluster of interest. Example: Using a reference pmid to find the community of research</p>
+            <p><span class="label">How to use:</span> Click the search button. After reviewing the different networks, click the plot the timeline.</p>
+            <p><span class="label">What happens:</span> Fetches the dataset to list all the network where the PubMedID is found.  </p>
+            <p><span class="label">Output:</span> Print the title of the paper.Lists the names of network the paper was found in the dropdown. Prints all the different resolution.
+            Prints the LLM generated label for the selected cluster and the reasoning.The plot the timeline button will visualize the cluster where x is the publication year and 
+            prints the datatable with the PubMedID,title, publication year and keyword search of interest in the cluster. The keyword search is on title and abstract. </p>
+          </div>
+          
+          <div class="image-grid">
+            <div class="image-box">
+              <img src="images/pmid-cluster-search-a.png" alt="pmid-cluster-search-a">
+              <div class="image-caption">Figure 1: PMID cluster search button</div>
+            </div>
+
+            <div class="image-box">
+              <img src="images/pmid-plot.png" alt="pmid-plot">
+              <div class="image-caption">Figure 2:Timeline plot of the selected cluster</div>
+            </div>
+
+            <div class="image-box">
+              <img src="images/pmid-dt.png" alt="pmid-dt">
+              <div class="image-caption">Figure 3: Data Table with the list of papers(pmid, title,year of publication) in the selected cluster </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="button-section">
+        <div class="button-layout">
+          <div class="button-details">
+            <h3>Browse Network: AI Generated Cluster Label and Reasoning</h3>
+            <p><span class="label">Purpose:</span> Find the appropriate cluster to explore in a network </p>
+            <p><span class="label">How to use:</span> Keyword search (search text input on top right) on the llm reasoning to find the appropriate cluster to explore</p>
+            <p><span class="label">Output:</span> A data table with cluster information (resolution, number of paper, llm labels, 
+            llm justifications, keywords, and network-resolution-clusterid.</p>
+          </div>
+          <div class="image-grid">
+            <div class="image-box">
+              <img src="images/browse-llm.png" alt="browse-llm">
+              <div class="image-caption">Figure 1: Browse Network: AI Generated Cluster Label and Reasoning</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="button-section">
+        <div class="button-layout">
+          <div class="button-details">
+            <h3>Browse Network: Citation Network Cluster Tree</h3>
+            <p><span class="label">Purpose:</span> Visualize non-heirarchical cluster tree per network. </p>
+            <p><span class="label">How to use:</span> Select a network to visualize the cluster movement from lower resolution to higher resolution.</p>
+            <p><span class="label">Output:</span> Collapsible tree and when clicked on a specific cluster node, the data table prints llm label and justification on right.</p>
+          </div>
+           <div class="image-grid">
+             <div class="image-box">
+               <img src="images/browse-tree.png" alt="browse-tree">
+               <div class="image-caption">Figure 1: Browse Network: Collapsible cluster tree (Resolution 1, 2,5,10,20 when available)</div>
+             </div>
+            </div>
+            <div class="note"> The size of node implies the number of leaf under the node.</div>
+        </div>
+      </div>
+      
+      
+      <div class="button-section">
+        <div class="button-layout">
+          <div class="button-details">
+            <h3>Browse Network/ Explore Network</h3>
+            <p><span class="label">Purpose:</span> Explore network of interest. This allows user to dive deeper into the literature 
+            from the subject of interest perspective i.e the non-human primate network can be explored to visualize the overall non-human primate model systems.</p>
+            
+            <p><span class="label">How to use:</span> Select an appropriate network can be from any category virus, bacteria, host model system,correlates of protection,
+            medical countermeasures. The network can be visualized in multiple resolution [Network Plot button]. The lower resolution provides the broader area clusters and the higher resolution provides
+            the well definied specific clusters. The cluster [timeline plot button] can be visualized with x as the publication year.</p>
+            <div class="image-grid">
+              <div class="image-box">
+                <img src="images/browse-search-container-a.png" alt="browse-search-container-a">
+                <div class="image-caption">Figure 1: Browse Network: Network Plot</div>
+              </div>
+            </div>
+            <p><span class="label">Output:</span> A network plot, timeline plot of the cluster an the cluster plot. The cluster plot shows the split of the cluster moving up
+            higher resolution.</p>
+          </div>
+          <div class="image-grid">
+            <div class="image-box">
+              <img src="images/browse-nw-plot.png" alt="browse-nw-plot">
+              <div class="image-caption">Figure 1: Browse Network: Network Plot</div>
+            </div>
+          </div>
+  
+          <div class="image-grid">
+            <div class="image-box">
+              <img src="images/browse-timeline-plot.png" alt="browse-timeline-plot">
+              <div class="image-caption">Figure 2: Browse Network: Timeline Plot</div>
+          </div>
+    
+          <div class="image-box">
+            <img src="images/browse-cluster-plot.png" alt="browse-cluster-plot">
+            <div class="image-caption">Figure 3: Browse Network: Cluster Plot</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="publication" class="card">
+      <h2>Publication</h2>
+
+      <!-- 
+      <h3>File does not upload</h3>
+      <ul>
+        <li>Check that the file type is supported.</li>
+        <li>Confirm the file contains the required columns.</li>
+        <li>Make sure the file is not corrupted.</li>
+      </ul>-->
+  </section>
+
+</div>
+
+<footer>Contact:<a href="mailto:ruchina@lanl.gov">ruchina@lanl.gov</a>
+  <!-- |<a href="/">Home</a> -->
+  <!-- | -->
+  &copy; <span id="year"></span></footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

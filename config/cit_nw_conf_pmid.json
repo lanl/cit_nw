@@ -1,0 +1,20 @@
+{
+     
+    
+    "cit_nw_pov_llm_cluster_labels" : ["Cop-Antibody-Cl.1:","Cop-Antibody-Cl.2","Cop-Antibody-Cl.5","Cop-Antibody-Cl.10","Cop-Antibody-Cl.20","Cop-Tcell-Cl.1","Cop-Tcell-Cl.2","Cop-Tcell-Cl.5",
+    "Cop-Tcell-Cl.10","Cop-Tcell-Cl.20"],
+    
+    "cit_nw_ab_sg_cluster_labels" : ["CoP-Antibody-SG-None","CoP-Antibody-SG-Neural","CoP-Antibody-SG-SingleChain","CoP-Antibody-SG-Autoimmunity","CoP-Antibody-SG-mAb","CoP-Antibody-SG-sarsHIVNeut",
+    "CoP-Antibody-SG-AbEngValid","CoP-Antibody-SG-ViralNeut","CoP-Antibody-SG-BacterialAb","CoP-Antibody-SG-NephropathImmun","CoP-Antibody-SG-GerminalCenter","CoP-Antibody-SG-Cancer"],
+        
+    "cit_nw_patho_virus_alpha_resclus_labels":["Virus-Alphavirus-Cl.1","Virus-Alphavirus-Cl.2","Virus-Alphavirus-Cl.5","Virus-Alphavirus-Cl.10","Virus-Alphavirus-Cl.20"],
+    
+    "cit_nw_vac_resclus_labels":["Vaccine-Cl.1","Vaccine-Cl.2","Vaccine-Cl.5","Vaccine-Cl.10","Vaccine-Cl.20"]
+    
+    
+    
+    
+   
+    
+}
+

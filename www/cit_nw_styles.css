@@ -1,0 +1,571 @@
+.cit-nw-search-container {
+        width: 50%;
+        margin: auto;
+        border: 2px solid #ddd;
+        padding: 20px;
+        border-radius: 10px;
+        position: relative;
+        background-color: #f9f9f9;
+      }
+      
+.cit-nw-help-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      
+/* Responsive Input Fields */
+.shiny-input-container input {
+  width: 100% !important;  /* Make text inputs fully responsive */
+  }
+      
+.cit-nw-main-panel-container {
+  margin-top: 20px;
+  text-align: center;
+  }
+      
+/* Make the search box responsive for smaller screens */
+@media (max-width: 768px){
+  .cit-nw-search-container {
+    width: 90%;  /* Adjust width for smaller screens */
+    }
+  }
+      
+/* Tablet */
+@media (max-width: 992px){
+  .cit-nw-search-container {
+    width: 90%;  /* Adjust width for smaller screens */
+    }
+}
+      
+/* Phone: 1 per row */
+@media (max-width: 600px){
+  .cit-nw-search-container {
+    width: 90%;  /* Adjust width for smaller screens */
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+/* STYLES HERE for DEVICES with physical max-screen width of 480px */
+.cit-nw-search-container {
+  width: 90%;  /* Adjust width for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+/* STYLES HERE for BROWSER WINDOWS with a max-width of 480px. 
+This will work on desktops when the window is narrowed.  */
+.cit-nw-search-container {
+  width: 90%;  /* Adjust width for smaller screens */
+  }
+}     
+      
+.cit-nw-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cit-nw-main-content {
+  flex: 1;
+  padding: 30px 20px;
+}
+      
+/* Sticky footer */
+.cit-nw-footer-bar {
+  height: 80px;
+  background: linear-gradient(to right, #e0e0e0, #f5f5f5);
+  color: #333;
+  text-align: center;
+  padding-top: 25px;
+  font-size: 14px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+
+.cit-nw-header {
+  background: linear-gradient(to right, #0000cc, #000016);
+  min-height: 180px;
+  width: 100vw;
+  margin: 0;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  border-radius: 0px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.title-link{
+        color:#fff; font-weight:900; font-size:52px;
+        text-decoration:none; cursor:pointer; line-height:1;
+      }
+
+.title-link:hover{ text-decoration: underline; }
+
+
+.landing-actions{ display:flex; gap:18px; margin: 12px 0 22px 0; }
+
+.landing-btn{
+        width: 280px; height: 84px;
+        font-size: 28px; font-weight: 500;
+        border-radius: 10px; border: 1px solid #d1d5db; background: #fff;
+      }
+
+.card-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+.app-card{
+  background:#fff;
+    border:3px solid #1f2a37;
+  border-radius:10px;
+  padding:18px;
+  text-align:center;
+  box-shadow: 0 4px 0 rgba(31,42,55,.16);
+  cursor:pointer;
+}
+
+.card-img{
+  width:100%;
+  max-width:260px;
+  height:90px;
+  object-fit:contain;
+  margin: 0 auto 12px auto;
+  display:block;
+}
+
+/* For the grid layout in landing page  */
+
+/* --- Organization layout --- */
+.org-wrapper{
+  width: 100%;
+  padding: 8px 0px 24px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.org-title{
+  text-align:center;
+  font-weight: 800;
+  margin: 8px 0 14px 0;
+}
+
+/* master grid that positions clusters like the screenshot */
+.org-grid{
+  display: grid;
+  gap: 24px 2px;
+  /*gap: row-gap column-gap;*/
+
+
+  /* 12 columns gives nice control */
+  grid-template-columns: repeat(12, 120px);
+  justify-content: center;
+  align-items: center;
+
+  /* define rows by area placement below */
+  grid-auto-rows: min-content;
+  width: max-content;   
+  margin: 0 auto;          /* center whole layout */
+}
+
+
+
+.cluster .cluster-cards{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 90px;
+  gap: 24px;
+  justify-content: center;
+}
+.cluster-label{
+  margin-top: 6px;
+  font-size: 6px;
+  text-align: center;
+  font-weight: 200;
+}
+
+/*/* square cards */
+
+.sq-card{
+
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* always square */
+  /*width: 80px;
+  height: 90px;     /* taller to fit text */
+  border-radius: 10px;
+  background: #fff;
+  border: 3px solid #999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-sizing: border-box;
+
+  position: relative;   /* needed for bottom text positioning */
+
+  transition: 0.2s ease;
+}
+
+.sq-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.sq-img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin-bottom: 4px;
+  margin: auto;   /* centers image vertically */
+}
+
+/* .sq-text{
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.1;
+  word-break: break-word;
+} */
+
+.sq-text{
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+
+  font-size: 20px;
+  font-weight: 200;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* .sq-card{
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background: #fff;
+  border: 3px solid #999;
+} */
+
+/* colors like screenshot */
+.c-red    { border-color:#ff2d2d; color:#ff2d2d; }
+.c-blue   { border-color:#00a3ff; color:#00a3ff; }
+.c-orange { border-color:#ffb020; color:#ffb020; }
+.c-pink   { border-color:#d94ad7; color:#d94ad7; }
+.c-green  { border-color:#4bb543; color:#4bb543; }
+.c-purple { border-color:#7a4bd9; color:#7a4bd9; }
+.c-maroon{ border-color:#800000; color:#800000; }
+.c-olive { border-color:#808000; color:#808000; }
+.c-teal { border-color:#469990; color:#469990; }
+.c-black  { border-color:#111; color:#111; }
+
+/* Place each area explicitly (THIS creates the look) */
+.area-red      { grid-column: 3 / span 4;  grid-row: 1; }
+.area-blue     { grid-column: 7 / span 5;  grid-row: 1; }
+
+.area-blue2    { grid-column: 3 / span 1;  grid-row: 2; }
+.area-orange   { grid-column: 5 / span 2;  grid-row: 2; }
+.area-pink     { grid-column: 9 / span 1;  grid-row: 2; }
+
+
+.area-center{
+  grid-column: 6 / span 2;
+  grid-row: 3;
+
+  display: flex;
+  flex-direction: row;   /* ← FIX */
+  gap: 20px;             /* space between the two tiles */
+  justify-content: center;
+  align-items: center;
+}
+
+.center-card-row{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* bottom left greens & bottom right purples */
+.area-greenL   { grid-column: 2 / span 6;  grid-row: 4; }
+.area-purpleR  { grid-column: 7 / span 5;  grid-row: 4; }
+
+.area-greenL2  { grid-column: 4 / span 2;  grid-row: 5; }
+.area-purpleR2 { grid-column: 7 / span 4;  grid-row: 5; }
+
+.area-greenL3  { grid-column: 3 / span 4;  grid-row: 6; }
+.area-purpleR3 { grid-column: 8 / span 4; grid-row: 6; }
+
+.area-greenL4  { grid-column: 3 / span 4;  grid-row: 7; }
+.area-purpleR4 { grid-column: 8 / span 3; grid-row: 7; }
+
+.area-purpleR5 { grid-column: 8 / span 3; grid-row: 8; }
+
+/* End: For the grid layout in landing page  */
+
+
+/* Publications*/
+
+
+/* Papers section */
+#papers-section{ margin-top: 18px; }
+
+.papers-header h2{
+  margin: 0 0 4px 0;
+  font-weight: 900;
+}
+.papers-header p{
+  margin: 0 0 14px 0;
+  color: #6b7280;
+}
+
+/* Grid */
+.papers-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+/* Card */
+.paper-card{
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.paper-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.16);
+}
+
+/* Image */
+.paper-img-wrap{ width:100%; height: 210px; overflow:hidden; }
+.paper-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* Body */
+.paper-body{ padding: 16px 16px 18px 16px; }
+
+.paper-title-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.paper-title{
+  font-size: 22px;
+  font-weight: 900;
+  color: #1d4ed8;
+  text-decoration: none;
+  line-height: 1.15;
+}
+.paper-title:hover{ text-decoration: underline; }
+
+.paper-ext{
+  font-size: 18px;
+  color: #1d4ed8;
+  margin-top: 2px;
+}
+
+.paper-excerpt{
+  margin: 12px 0 0 0;
+  color: #374151;
+  line-height: 1.6;
+  font-size: 15px;
+
+  /* limit text lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .papers-grid{ grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+}
+@media (max-width: 700px){
+  .papers-grid{ grid-template-columns: 1fr; }
+}
+
+/* End: Publications*/
+
+.cit-nw-css-act-btn-color {
+  background-color: #FFFFFF;
+  color: black;
+  padding: 12px 24px;        /* Bigger button */
+  font-size: 16px;           /* Larger text */
+  border-radius: 6px;        /* Optional rounded corners */
+  margin-top: 20px;          /* Space from title above */
+  }
+
+.cit-nw-css-act-btn-color.active {
+  background-color:#2167d9;
+  color: white;
+  }
+    
+/* Sub-button grid: exactly 3 per row, neat spacing */
+.cit-nw-subgrid {
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:14px;
+  margin-top:100px; margin-bottom:10px;
+  }
+  
+/* Tablet: 2 per row */
+@media (max-width: 992px) {.cit-nw-subgrid {grid-template-columns: repeat(2, minmax(0, 1fr));}}
+    
+/* Phone: 1 per row */
+@media (max-width: 600px) {.cit-nw-subgrid {grid-template-columns: 1fr;}}
+    
+/* Sub-buttons: rectangular, professional look */
+.cit-nw-sub-btn {
+  width:100%;
+  display:inline-block;
+  padding:24px 30px;
+  font-size:15px;
+  font-weight:500;
+  line-height:1.2;
+  border-radius:8px;
+  border:1px solid #1f6feb;         /* outline */
+  background:#5B7C99;                /* professional blue */
+  color:#ffffff;
+  text-align: center;
+  display: inline-block;
+  /* prevent overflow: allow wrapping and breaking long tokens */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;     
+  }
+    
+.cit-nw-sub-btn:active { transform: translateY(1px); box-shadow: 0 1px 3px rgba(0,0,0,0.10); }
+/* Selected state + row layout when one is active */
+
+.cit-nw-sub-selected-row {
+  display:flex; gap:12px; align-items:center; justify-content:flex-end; margin:10px 0;
+  flex-wrap: wrap;
+}
+
+.cit-nw-sub-selected-row {
+  display:flex; gap:12px; align-items:center; justify-content:flex-end; margin:10px 0; flex-wrap: wrap;
+  }
+    
+.cit-nw-sub-btn.selected {
+  border-width:3px; background:#1856b8; box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  }
+
+/* Optional 'Show all' control */
+.cit-nw-show-all {
+  margin-right:auto; border:none; background:transparent; color:#2167d9;
+  font-weight:600; cursor:pointer; padding:6px 8px;
+  }
+    
+/* --- radio buttons inline --- */
+.cit-nw-radio-inline {
+  display: inline-block;
+  margin-right: 15px;
+  }
+  
+.cit-nw-boxed {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #fff;          /* optional, helps the border pop */
+    box-shadow: 0 1px 2px rgba(0,0,0,.04); /* optional */
+  }
+  
+/* Stop rows from spilling out of the bordered .boxed container */
+.cit-nw-main-panel-container.cit-nw-boxed .row{
+  margin-left: 0 !important;     /* BS3 */
+  margin-right: 0 !important;    /* BS3 */
+  --bs-gutter-x: 0;              /* BS5 */
+}
+  
+/* Don't center everything; only center the header text */
+.cit-nw-main-panel-container { text-align: left; }
+.cit-nw-main-panel-container .panel-header { text-align: center; }
+
+/* Make htmlwidgets block-level so centering doesn't affect width calc */
+.cit-nw-main-panel-container .html-widget { display: block; margin: 0; }
+
+/* Safety net to hide any tiny horizontal bleed */
+.cit-nw-main-panel-container.boxed { overflow-x: hidden; }
+
+/* hand cursor over label text and (optional) its marker paths */
+.plotly .pointtext, .plotly .points path { cursor: pointer !important; }
+    
+/* make buttons pill-shaped */
+.btn-group .btn {
+  border-radius: 999px;
+  margin: 4px 6px;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  color: #555555;
+  box-shadow: none;
+  }
+
+/* selected state */
+.btn-group .btn.active {
+  border-color: #1a73e8;
+  color: #1a73e8;
+  background-color: #e8f0fe;
+  }
+
+/* add a bit of spacing before the check icon */
+.btn-group .btn .fa-check {
+  margin-right: 4px;
+  }
+
+
+/*For the collapsible tree */
+/* container height: change calc(...) to suit your header/footer */
+#split-container { height: calc(100vh - 160px); display: flex; }
+
+/* left & right panels fill container and scroll as needed */
+#leftPanel, #rightPanel {
+  height: 100%;
+  overflow: auto;
+  }
+
+/* nicer gutter */
+.gutter {
+  background-color: #efefef;
+  cursor: col-resize;
+  width: 10px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
+  
+}
+      
