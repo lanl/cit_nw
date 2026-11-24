@@ -3,3 +3,6 @@ www/data/new_mdf/All.df.noAbstract.qs2 filter=lfs diff=lfs merge=lfs -text
 www/data/new_mdf/Antimicrobial.mdf.RDS filter=lfs diff=lfs merge=lfs -text
 www/data/new_mdf/Cytokine.mdf.RDS filter=lfs diff=lfs merge=lfs -text
 www/data/new_mdf/HIV.mdf.RDS filter=lfs diff=lfs merge=lfs -text
+www/data/new_mdf/Patient.mdf.RDS filter=lfs diff=lfs merge=lfs -text
+www/data/new_mdf/Tcell.mdf.RDS filter=lfs diff=lfs merge=lfs -text
+www/data/new_mdf/Vaccine.mdf.RDS filter=lfs diff=lfs merge=lfs -text
